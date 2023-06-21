@@ -1,0 +1,51 @@
+/* styles.css */
+
+body, nav {
+  background-color: #333;
+  color: white;
+  padding-right: 5%;
+  padding-left: 5%;
+  padding-top: 3%;
+}
+
+a {
+  color: #ffc107;
+}
+
+.jumbotron {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  color: white;
+  background-color: #333;
+  padding-top: 3%;
+}
+
+.space-above {
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+/* New styles for the table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+table, table th, table td {
+  background-color: #333;
+  color: #ffc107;
+}
+
+table th,
+table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ffc107;
+}
+
+/* Optional: Add hover effect to table rows */
+table tbody tr:hover {
+  background-color: #444;
+}

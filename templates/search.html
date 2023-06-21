@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="text-center">Search Cafes</h2>
+            <form method="POST" action="{{ url_for('search_cafes') }}">
+                {{ form.hidden_tag() }}
+                <div class="form-floating mb-3">
+                    {{ form.name(class_='form-control', id='name', placeholder='City or Cafe Name') }}
+                    <label for="floatingInput">City or Cafe Name</label>
+                </div>
+                {{ form.submit(class_='btn btn-primary mt-3') }}
+            </form>
+        </div>
+    </div>
+</div>
+
+{% if results %}
+{% if results %}
+<h2>Search Results for "{{ query }}"</h2>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>City</th>
+        <th>Open Time</th>
+        <th>Closing Time</th>
+        <th>Location</th>
+        <th>Coffee Rating</th>
+        <th>WiFi Rating</th>
+        <th>Power Outlet</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for cafe in results %}
+    <tr>
+        <td>{{ cafe.name }}</td>
+        <td>{{ cafe.city_name }}</td>
+        <td>{{ cafe.open_time }}</td>
+        <td>{{ cafe.closing_time }}</td>
+        <td><a href="{{ cafe.map_url }}">Map link</a></td>
+        <td>{{ cafe.coffee_rating }}</td>
+        <td>{{ cafe.wifi_rating }}</td>
+        <td>{{ cafe.power_outlet }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No data found.</p>
+{% endif %}
+{% endif %}
+
+{% endblock %}
+

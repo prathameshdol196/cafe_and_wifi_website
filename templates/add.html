@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="text-center">Add a New Cafe</h2>
+            <form method="POST" action="{{ url_for('add_new_cafe') }}">
+                {{ form.hidden_tag() }}
+                <div class="form-floating mb-3">
+                    {{ form.cafe(class_='form-control', id='floatingCafe', placeholder='Cafe name') }}
+                    <label for="floatingCafe">Cafe name</label>
+                </div>
+                <div class="form-floating mb-3">
+                    {{ form.city(class_='form-control', id='floatingCafe', placeholder='City name') }}
+                    <label for="floatingCafe">City name</label>
+                </div>
+                <div class="form-floating mb-3">
+                    {{ form.location(class_='form-control', id='floatingLocation', placeholder='Cafe Location on Google
+                    Maps (URL)') }}
+                    <label for="floatingLocation">Cafe Location on Google Maps (URL)</label>
+                </div>
+                <div class="form-floating mb-3">
+                    {{ form.open_time(class_='form-control', id='floatingOpenTime', placeholder='Open time e.g. 8AM') }}
+                    <label for="floatingOpenTime">Open time</label>
+                </div>
+                <div class="form-floating mb-3">
+                    {{ form.closing_time(class_='form-control', id='floatingClosingTime', placeholder='Closing time e.g.
+                    8PM') }}
+                    <label for="floatingClosingTime">Closing time</label>
+                </div>
+                <div class="form-floating mb-3">
+                    {{ form.coffee_rating(class_='form-select', id='floatingCoffeeRating') }}
+                    <label for="floatingCoffeeRating">Coffee rating</label>
+                </div>
+                <div class="form-floating mb-3">
+                    {{ form.wifi_rating(class_='form-select', id='floatingWifiRating') }}
+                    <label for="floatingWifiRating">Wifi rating</label>
+                </div>
+                <div class="form-floating mb-3">
+                    {{ form.power_outlet(class_='form-select', id='floatingPowerOutlet') }}
+                    <label for="floatingPowerOutlet">Power Socket availability</label>
+                </div>
+                {{ form.submit(class_='btn btn-primary mt-3') }}
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

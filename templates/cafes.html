@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="jumbotron">All Cafes</h2>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>City</th>
+        <th>Open Time</th>
+        <th>Closing Time</th>
+        <th>Location</th>
+        <th>Coffee Rating</th>
+        <th>WiFi Rating</th>
+        <th>Power Outlet</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for cafe in cafes %}
+    <tr>
+        <td>{{ cafe.name }}</td>
+        <td>{{ cafe.city_name }}</td>
+        <td>{{ cafe.open_time }}</td>
+        <td>{{ cafe.closing_time }}</td>
+        <td><a href="{{ cafe.map_url }}">Map link</a></td>
+        <td>{{ cafe.coffee_rating }}</td>
+        <td>{{ cafe.wifi_rating }}</td>
+        <td>{{ cafe.power_outlet }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

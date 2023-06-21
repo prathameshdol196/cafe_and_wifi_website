@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="px-4 py-5 my-5 text-center">
+    <h1 class="fw-bold text-white">Coffee and Wifi</h1>
+    <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">The best work and study-friendly cafes, restaurants, and hotel lobbies in London. Find
+            venues with free and reliable Wi-Fi hotspots, ample power sockets, and comfy seating areas.</p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <a class="btn btn-outline-warning btn-lg" role="button" href="{{ url_for('search_cafes') }}">Search</a>
+            <a class="btn btn-outline-warning btn-lg" role="button" href="{{ url_for('show_all_cafes') }}">See All</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
